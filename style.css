@@ -65,6 +65,7 @@ ul li a:hover {
   color: red;
   text-decoration: underline;
   border-radius: 4px;
+  text-underline-offset: 9px;
 }
 #header .btn {
   background-color: red;
@@ -109,7 +110,7 @@ ul li a:hover {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 #slider button {
   position: absolute;
@@ -135,8 +136,10 @@ ul li a:hover {
 #slider button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* chinese */
-.chinese {
+/* ======
+ chinese section
+  ======== */
+/* .chinese {
   position: relative;
   position: relative;
   width: 100%;
@@ -169,4 +172,101 @@ ul li a:hover {
   padding: 10px;
   color: black;
   border-bottom: 10px;
+} */
+.chinese {
+  background-image: url(./assets/Rectangle\ 10.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yaxis {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: white;
+  padding: 15px 20px;
+}
+.chinese-btn {
+  background-color: antiquewhite;
+  padding: 10px;
+  color: black;
+  border-bottom: 10px;
+}
+
+/* ======
+stories section
+  ======== */
+.stories {
+  background-image: url(./assets/stories\ back.png);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.storiesIntro {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: white;
+  padding: 15px 20px;
+}
+.storiesIntro img {
+  width: 45%;
+  height: 45%;
+  object-fit: contain;
+}
+.it-text {
+  text-align: left;
+  line-height: 1.5;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  top: 0;
+}
+.storiesIntro h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: brown;
+}
+.storiesIntro h2 span {
+  text-decoration: underline;
+  text-underline-offset: 9px;
+}
+
+.storiesIntro p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.story-btn {
+  background-color: rgb(12, 12, 11);
+  padding: 10px;
+  color: hwb(0 70% 26%);
+  border-bottom: 10px;
+  max-width: 370px;
+}
+.story-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.story-flex img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
 }
