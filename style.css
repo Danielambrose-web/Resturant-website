@@ -270,3 +270,44 @@ stories section
   height: 30%;
   object-fit: cover;
 }
+/* ======
+package section
+  ======== */
+.package {
+  background-image: url("./assets/package/packagedisplay1.png"),
+    url("./assets/package/Packagedisplay2.png"),
+    url("./assets/package/packagedisplay3.png");
+  background-position: left top, center top, right top;
+  background-repeat: no-repeat;
+  background-size: 33% auto, 33% auto, 33% auto;
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.packages_hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.floating-imgs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.floating-imgs img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
