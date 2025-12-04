@@ -311,3 +311,73 @@ package section
   height: 200px;
   object-fit: cover;
 }
+/*menu section*/
+.menu {
+  background-image: url("./assets/menuback.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.menu-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+/*img section*/
+.img_full {
+  width: 100%;
+  height: auto;
+}
+/*img flex section*/
+.img-flex {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+/*loaction1 section*/
+.our-location {
+  background-image: url("./assets/location.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/*map section*/
+.map {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%; /* This maintains a 16:9 aspect ratio */
+  height: 0;
+  margin-top: 20px; /* Add some space below your other content */
+  width: 100%;
+}
+
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
