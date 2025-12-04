@@ -368,9 +368,9 @@ package section
 .map {
   position: relative;
   overflow: hidden;
-  padding-bottom: 56.25%; /* This maintains a 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
-  margin-top: 20px; /* Add some space below your other content */
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -380,4 +380,117 @@ package section
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* --- contact section --- */
+.contact-section {
+  padding: 40px 20px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* --- FORM --- */
+.contact-form h2,
+.contact-info h2,
+.quick-links h2,
+.hours h2 {
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: black;
+  color: white;
+  padding: 14px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- QUICK LINKS --- */
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.9em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+/* Styling for the main footer container */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer img {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50px;
+  width: 200px;
+  height: auto;
+}
+.footer p {
+  margin: 5px 0;
 }
