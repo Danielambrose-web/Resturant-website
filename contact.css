@@ -1,0 +1,55 @@
+.menu_hero {
+  background-image: url("./assets/menupage/1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 3rem;
+}
+.menu_hero h1 {
+  margin: 0;
+}
+
+.download_menu {
+  background-color: black;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.menu-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #c0392b;
+}
+.menu-item-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
