@@ -77,6 +77,39 @@ ul li a:hover {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+/* --- Mobile Styles (Media Query) --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  .nav-menu {
+    /* Position the menu off-screen by default */
+    position: fixed;
+    right: -100%;
+    top: 60px; /* Below the navbar height */
+    background-color: #333;
+    width: 100%;
+    flex-direction: column;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu.active {
+    right: 0; /* Slide the menu in when 'active' class is added by JS */
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
 /* slider section */
 #slider {
   position: relative;
