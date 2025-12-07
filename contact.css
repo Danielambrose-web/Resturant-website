@@ -90,22 +90,14 @@
     opacity: 1;
   }
 }
-/* Add this CSS to position the text over the image */
+
 .text {
-  color: #f2f2f2; /* White text color */
+  color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute; /* Position the text relative to the parent .slideshow-container or .mySlides (depending on your exact layout) */
-  bottom: 8px; /* Position it near the bottom */
-  width: 100%; /* Make the text container span the full width */
-  text-align: center; /* Center the text horizontally */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Optional: semi-transparent black background for readability */
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-
-/* Ensure that the parent container allows absolute positioning to work correctly */
-/* You already have 'position: relative;' on .slideshow-container in the previous CSS, which is essential */
