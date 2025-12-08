@@ -19,7 +19,9 @@ body {
   overflow: hidden;
   margin: 0;
 }
-/* header section */
+/* =========
+header section
+========== */
 #header {
   display: flex;
   justify-content: space-between;
@@ -119,8 +121,10 @@ ul.nav-menu li a:hover {
   }
 }
 
-/* slider section */
-#slider {
+/* ==========
+slider section 
+==========*/
+#hero {
   background-image: var(--hero-background-img);
   height: 100vh;
   width: 100%;
@@ -131,18 +135,18 @@ ul.nav-menu li a:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
-.slide {
+.hero-text {
   text-align: center;
   color: white;
   padding: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-.slide h1 {
+.hero-text h1 {
   font-size: 2.5rem;
   line-height: 1.2;
 }
 @media (max-width: 768px) {
-  .slide h1 {
+  .hero-text h1 {
     font-size: 1.5rem;
   }
 }
