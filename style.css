@@ -29,23 +29,28 @@ header section
   padding: 0 20px;
   height: 110px;
   background-color: black;
+  position: relative;
 }
+
 #header .logo img {
   height: 70px;
   width: 270px;
   margin-left: 40px;
 }
+
 .nav-links {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-right: 40px;
 }
+
 ul.nav-menu {
   display: flex;
   gap: 25px;
   list-style: none;
 }
+
 ul.nav-menu li a {
   color: white;
   font-family: "Inter", sans-serif;
@@ -56,12 +61,14 @@ ul.nav-menu li a {
   transition: color 0.3s;
   font-size: 16px;
 }
+
 ul.nav-menu li a:hover {
   color: red;
   text-decoration: underline;
   border-radius: 4px;
   text-underline-offset: 9px;
 }
+
 #header .btn {
   background-color: red;
   color: white;
@@ -74,34 +81,56 @@ ul.nav-menu li a:hover {
   font-style: normal;
   font-size: 16px;
   cursor: pointer;
+  white-space: nowrap;
 }
+
 .hamburger {
   display: none;
   cursor: pointer;
   color: white;
   font-size: 24px;
+  background: none;
+  border: none;
+  padding: 10px;
 }
+
+/* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
+  #header {
+    padding: 0 15px;
+  }
+
+  #header .logo img {
+    height: 50px;
+    width: 200px;
+    margin-left: 0;
+  }
+
   .hamburger {
     display: block;
     z-index: 1001;
+    margin-left: auto;
   }
 
   .nav-links {
     position: fixed;
     right: -100%;
     top: 110px;
-    background-color: black;
     width: 100%;
+    height: calc(100vh - 110px);
+    background-color: black;
     flex-direction: column;
     transition: right 0.3s ease-in-out;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     padding: 20px 0;
     z-index: 1000;
+    margin-right: 0;
+    align-items: stretch;
+    gap: 0;
   }
+
   .nav-links.active {
     right: 0;
-    display: flex;
   }
 
   ul.nav-menu {
@@ -110,9 +139,16 @@ ul.nav-menu li a:hover {
     gap: 0;
   }
 
+  ul.nav-menu li {
+    width: 100%;
+  }
+
   ul.nav-menu li a {
+    display: block;
     padding: 15px 20px;
     text-align: center;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
   }
 
   #header .btn {
