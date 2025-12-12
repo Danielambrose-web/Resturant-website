@@ -1,0 +1,178 @@
+/* --- Download Menu Section Styles (Always Column Layout) --- */
+.download_menu {
+  display: flex;
+  flex-direction: column; /* Ensures column layout on all screen sizes */
+  gap: 30px; /* Space between each menu item wrapper */
+  padding: 30px 5%; /* Adds padding on the sides */
+  background-color: #000;
+  align-items: center; /* Center the items within the section */
+}
+
+.menu-item-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack button above image */
+  align-items: center; /* Center button and image horizontally */
+  gap: 15px; /* Space between the button and the image */
+  width: 100%; /* Take full width of parent (with padding) */
+  /*max-width: 600px; Optional: Prevent images from getting too wide on large screens */
+}
+
+.menu-item-wrapper img {
+  width: 100%; /* Image fills its container width responsively */
+  height: auto;
+  display: block;
+}
+
+.menu-button {
+  /* Position is now static/normal flow */
+  background-color: #e41e26; /* Red color from design */
+  color: white;
+  border: none;
+  padding: 20px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Slideshow Section Styles --- */
+.testimonial-section {
+  background-color: #000;
+  padding-bottom: 40px;
+}
+
+.slideshow-container {
+  position: relative;
+  /* max-width: 1000px; */
+  margin: auto;
+  overflow: hidden; /* Important for animation */
+  min-height: 300px;
+  width: 100%;
+}
+
+.slide-background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-content {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  color: white;
+  padding: 20px 10%;
+  text-align: center;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  min-height: 150px;
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.text-content h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  width: 100%;
+}
+
+/* --- Dots/Navigation Styles --- */
+.dot-navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #e41e26; /* Active/Hover color */
+}
+
+/* CSS classes controlled by JavaScript */
+.mySlides {
+  display: none; /* JS will change this to 'block' for the active slide */
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .slideshow-container {
+    min-height: 250px;
+  }
+
+  .text-content {
+    min-height: 120px;
+    padding: 15px 8%;
+  }
+
+  .text-content p {
+    font-size: 0.9rem;
+  }
+
+  .text-content h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    min-height: 200px;
+  }
+
+  .text-content {
+    min-height: 100px;
+    padding: 12px 5%;
+  }
+
+  .text-content p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .text-content h2 {
+    font-size: 0.95rem;
+  }
+}
