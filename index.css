@@ -109,76 +109,140 @@
     max-width: 280px;
   }
 }
+
 /* ======
-stories section
-  ======== */
+stories section - Full Screen Setup
+======== */
 .stories {
   background-image: url(./assets/stories\ back.png);
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center top;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 20px;
+  box-sizing: border-box;
 }
+
 .storiesIntro {
-  font-size: 12px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
-  color: white;
-  padding: 15px 20px;
+  width: 100%;
+  margin-bottom: auto;
 }
+
 .storiesIntro img {
-  width: 45%;
-  height: 45%;
-  object-fit: contain;
+  flex-basis: 50%;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }
+
 .it-text {
+  flex-basis: 50%;
+  padding: 0;
+  margin: 0;
   text-align: left;
-  line-height: 1.5;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 40px;
-  top: 0;
 }
-.storiesIntro h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: brown;
+.stories-header,
+.story,
+.story-btn {
+  margin: 0 0 15px 0;
+}
+.storiesIntro .stories-header {
+  font-size: 64px;
+  font-weight: 700;
+  color: red;
 }
 .storiesIntro h2 span {
+  color: red;
   text-decoration: underline;
   text-underline-offset: 9px;
 }
-
 .storiesIntro p {
-  font-size: 14px;
+  font-size: 32px;
   color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+  padding-top: 50px;
+  max-width: 80%;
 }
 .story-btn {
   background-color: rgb(12, 12, 11);
-  padding: 10px;
-  color: hwb(0 70% 26%);
-  border-bottom: 10px;
-  max-width: 370px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-top: 20px;
 }
+
+/* ======
+Logos section
+======== */
 .story-flex {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
+  max-width: 1000px;
+  width: 100%;
 }
+
 .story-flex img {
-  width: 30%;
-  height: 30%;
-  object-fit: cover;
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
 }
+
+/* ======
+RESPONSIVE DESIGN (Mobile/Tablet View)
+======== */
+@media (max-width: 768px) {
+  /* When screen is 768px or smaller: */
+
+  .storiesIntro {
+    /* Stack the image and text div vertically */
+    flex-direction: column;
+    /* Reset margin that was used to push content down on large screen */
+    margin-bottom: 20px;
+    align-items: center; /* Center items when stacked */
+  }
+
+  .storiesIntro img,
+  .it-text {
+    /* Ensure both take full width when stacked in a column */
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .it-text {
+    /* Add some spacing above the text when the image is above it */
+    margin-top: 20px;
+  }
+
+  .story-flex {
+    /* Stack the three logo images vertically */
+    flex-direction: column;
+    gap: 20px; /* Adjust gap for column layout */
+  }
+
+  .story-flex img {
+    /* Ensure logos take up appropriate width when stacked */
+    width: 50%;
+    max-width: 200px;
+    height: auto;
+  }
+}
+
 /* ======
 package section
   ======== */
