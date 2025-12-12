@@ -1,447 +1,690 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Sixtyfour&display=swap");
-/* ======
- chinese section
-  ======== */
-.chinese {
-  background-image: url(./assets/Rectangle\ 10.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-  height: 336px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+/* ============================================
+   CSS CUSTOM PROPERTIES (Variables)
+============================================ */
+:root {
+  /* Colors */
+  --color-primary: #ff5733;
+  --color-primary-hover: #e04e2c;
+  --color-dark: #0c0c0b;
+  --color-light: antiquewhite;
+  --color-light-hover: #f5e6d3;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #ff0000;
+  --color-text: rgba(0, 0, 0, 0.8);
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Oswald", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 5px;
+
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+
+  /* Shadows */
+  --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  --shadow-box: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.yaxis {
-  font-size: 110%;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  color: white;
-  padding: 15px 20px;
-  max-width: 90%;
-  text-align: center;
-  line-height: 1.4;
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.chinese-btn {
-  background-color: antiquewhite;
-  padding: 10px 20px;
-  color: black;
-  border: none;
-  border-radius: 4px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.container {
+  width: 100%;
+  /* max-width: 1400px; */
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
   font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  font-size: 14px;
+  transition: all var(--transition-fast);
+  text-align: center;
 }
 
-.chinese-btn:hover {
-  background-color: #f5e6d3;
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.btn--dark:hover {
+  background-color: #1a1a19;
+  transform: translateY(-2px);
+}
+
+.btn--light {
+  background-color: var(--color-light);
+  color: var(--color-black);
+}
+
+.btn--light:hover {
+  background-color: var(--color-light-hover);
   transform: scale(1.05);
 }
 
-/* ===== Mobile Responsive ===== */
-@media (max-width: 1024px) {
-  .chinese {
-    height: auto;
-    min-height: 280px;
-  }
-
-  .yaxis {
-    font-size: 90%;
-    gap: 25px;
-    padding: 20px 15px;
-  }
+/* ============================================
+   CHINESE FOOD BANNER SECTION
+============================================ */
+.chinese {
+  background-image: url(./assets/Rectangle\ 10.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 336px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md);
 }
 
-@media (max-width: 768px) {
-  .chinese {
-    min-height: 250px;
-    padding: 15px;
-  }
-
-  .yaxis {
-    flex-direction: column;
-    gap: 15px;
-    font-size: 18px;
-    padding: 15px 10px;
-    max-width: 100%;
-  }
-
-  .chinese-btn {
-    padding: 12px 25px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 300px;
-  }
+.chinese__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  max-width: 90%;
+  text-align: center;
 }
 
-@media (max-width: 480px) {
-  .chinese {
-    min-height: 220px;
-    padding: 10px;
-  }
-
-  .yaxis {
-    gap: 12px;
-    font-size: 16px;
-    padding: 10px 5px;
-  }
-
-  .yaxis h2 {
-    font-size: 16px;
-    margin: 0;
-  }
-
-  .chinese-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-    width: 100%;
-    max-width: 280px;
-  }
+.chinese__title {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
-/* ======
-stories section - Full Screen Setup
-======== */
+/* ============================================
+   OUR STORY SECTION
+============================================ */
 .stories {
   background-image: url(./assets/stories\ back.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: 100vh;
   width: 100%;
-  padding: 20px 20px;
-  box-sizing: border-box;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
 }
 
-.storiesIntro {
+.stories__intro {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
+  gap: var(--spacing-lg);
   width: 100%;
-  margin-bottom: auto;
+  margin-bottom: var(--spacing-xl);
 }
 
-.storiesIntro img {
-  flex-basis: 50%;
+.stories__image-wrapper {
+  flex: 1;
   max-width: 50%;
+}
+
+.stories__image {
+  width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
 }
 
-.it-text {
-  flex-basis: 50%;
-  padding: 0;
-  margin: 0;
-  text-align: left;
+.stories__text {
+  flex: 1;
+  padding-right: var(--spacing-md);
 }
-.stories-header,
-.story,
-.story-btn {
-  margin: 0 0 15px 0;
-}
-.storiesIntro .stories-header {
-  font-size: 64px;
+
+.stories__header {
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
-  color: red;
+  color: var(--color-red);
+  margin-bottom: var(--spacing-md);
 }
-.storiesIntro h2 span {
-  color: red;
+
+.stories__header-accent {
+  color: var(--color-red);
   text-decoration: underline;
   text-underline-offset: 9px;
 }
-.storiesIntro p {
-  font-size: 32px;
-  color: rgba(0, 0, 0, 0.8);
+
+.stories__description {
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: var(--color-text);
   line-height: 1.6;
-  padding-top: 50px;
-  max-width: 80%;
-}
-.story-btn {
-  background-color: rgb(12, 12, 11);
-  padding: 10px 20px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 24px;
-  margin-top: 20px;
+  margin-bottom: var(--spacing-lg);
+  max-width: 90%;
 }
 
-/* ======
-Logos section
-======== */
-.story-flex {
+.stories__logos {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 40px;
   width: 100%;
+  margin-top: auto;
+  padding-top: var(--spacing-lg);
 }
 
-.story-flex img {
-  height: 50%;
-  width: auto;
+.stories__logo-item img {
+  height: auto;
+  width: 100%;
+  max-width: 150px;
   object-fit: contain;
   opacity: 0.7;
+  transition: opacity var(--transition-fast);
 }
 
-/* ======
-RESPONSIVE DESIGN (Mobile/Tablet View)
-======== */
-@media (max-width: 768px) {
-  .storiesIntro {
-    flex-direction: column;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-
-  .storiesIntro img,
-  .it-text {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-
-  .it-text {
-    margin-top: 20px;
-  }
-
-  .story-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .story-flex img {
-    width: 50%;
-    max-width: 200px;
-    height: auto;
-  }
+.stories__logo-item img:hover {
+  opacity: 1;
 }
 
-/* Global Reset and Body Styles */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  line-height: 1.6;
-}
-
-/* ====================================
-PACKAGE SECTION STYLES (Desktop View)
-==================================== */
+/* ============================================
+   CATERING PACKAGES SECTION
+============================================ */
 .package {
-  /* Using three background images to create the horizontal split */
   background: url("./assets/package/packagedisplay1.png") left top no-repeat,
     url("./assets/package/Packagedisplay2.png") center top no-repeat,
     url("./assets/package/packagedisplay3.png") right top no-repeat;
-
-  /* Ensures no space between the images and they scale responsively */
-  background-size: 33.3% auto, 33.3% auto, 33.3% auto;
-
-  width: 100%;
+  background-size: 33.33% 100%;
   min-height: 500px;
-  padding: 20px 0;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
-.packages_hover {
+.package__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  z-index: 10;
+  text-align: center;
+  color: var(--color-white);
+  text-shadow: var(--shadow-text);
+  max-width: 800px;
   width: 100%;
-  max-width: 800px; /* Constrain content width on very large screens */
 }
 
-.packages_hover h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.package__title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
 }
 
-.floating-imgs {
+.package__images {
   display: flex;
-  width: 100%;
-  gap: 30px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
 }
 
-.floating-imgs img {
-  width: 40%;
-  height: 40%;
+.package__images img {
+  width: 30%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-box);
+  transition: transform var(--transition-fast);
 }
 
-.package button,
-.menu button {
-  padding: 10px 20px;
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.package__images img:hover {
+  transform: scale(1.05);
 }
 
-.package button:hover,
-.menu button:hover {
-  background-color: #e04e2c;
-}
-
-/* ====================================
-MENU SECTION STYLES (Desktop View)
-==================================== */
+/* ============================================
+   MENU SECTION
+============================================ */
 .menu {
   background-image: url("./assets/menuback.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Ensures the background image scales with the screen */
-  width: 100%;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
   min-height: 500px;
-  padding: 40px 20px;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  /* Dark overlay for better text readability */
-  background-color: rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
-.menu-hover {
+.menu__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: var(--color-white);
+  text-shadow: var(--shadow-text);
   max-width: 700px;
   width: 100%;
 }
 
-.menu-hover .menu-header {
-  font-size: 3rem;
+.menu__title {
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-md);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.menu-hover p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  padding: 0 15px;
+.menu__description {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  padding: 0 var(--spacing-md);
 }
 
-/* ====================================
-MOBILE RESPONSIVENESS (Media Queries)
-==================================== */
-@media screen and (max-width: 768px) {
-  /* Mobile styles for the PACKAGE section */
-  .package {
-    /* Switch to a single, centered background image for mobile */
-    background: url("./assets/package/Packagedisplay2.png") center center
-      no-repeat;
-    background-size: cover;
-    min-height: 400px;
-    padding: 10px 0;
-  }
-
-  .packages_hover h2 {
-    font-size: 1.2rem;
-  }
-
-  .floating-imgs img {
-    width: 80px;
-    height: 80px;
-  }
-
-  /* Mobile styles for the MENU section */
-  .menu {
-    min-height: 350px;
-    padding: 30px 10px;
-  }
-
-  .menu-hover .menu-header {
-    font-size: 2rem;
-  }
-
-  .menu-hover p {
-    font-size: 0.9rem;
-    padding: 0 10px;
-  }
+/* ============================================
+   FULL WIDTH IMAGE SECTION
+============================================ */
+.full-image {
+  width: 100%;
+  line-height: 0;
 }
 
-/*img section*/
-.img_full {
+.full-image img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
-/*img flex section*/
-.img-flex {
+
+/* ============================================
+   IMAGE GALLERY SECTION
+============================================ */
+.gallery {
+  width: 100%;
+}
+
+.gallery__grid {
   display: flex;
-  gap: 0;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
-/*loaction1 section*/
-.our-location {
+
+.gallery__item {
+  flex: 1 1 20%;
+  min-width: 200px;
+  height: 80vh;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+/* ============================================
+   LOCATION SECTION
+============================================ */
+.location {
   background-image: url("./assets/location.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
   min-height: 400px;
-  padding: 20px;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
-/*map section*/
-.map {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-top: 20px;
+
+.location__content {
+  text-align: center;
+  color: var(--color-white);
+  text-shadow: var(--shadow-text);
+  max-width: 800px;
   width: 100%;
 }
 
-.map iframe {
+.location__title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+}
+
+.location__address {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-transform: capitalize;
+}
+
+/* ============================================
+   MAP SECTION
+============================================ */
+.map {
+  width: 100%;
+}
+
+.map__container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.map__container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: 0;
+}
+
+/* ============================================
+   RESPONSIVE STYLES - TABLET (max-width: 1024px)
+============================================ */
+@media screen and (max-width: 1024px) {
+  .chinese {
+    min-height: 280px;
+  }
+
+  .chinese__content {
+    gap: var(--spacing-md);
+  }
+
+  .stories__intro {
+    gap: var(--spacing-md);
+  }
+
+  .stories__description {
+    max-width: 100%;
+  }
+
+  .package {
+    min-height: 450px;
+  }
+
+  .package__images {
+    gap: var(--spacing-md);
+  }
+
+  .gallery__item {
+    flex: 1 1 33.33%;
+    height: 50vh;
+  }
+}
+
+/* ============================================
+   RESPONSIVE STYLES - TABLET PORTRAIT (max-width: 768px)
+============================================ */
+@media screen and (max-width: 768px) {
+  /* Chinese Section */
+  .chinese {
+    min-height: 250px;
+    padding: var(--spacing-md);
+  }
+
+  .chinese__content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .btn--light {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Stories Section */
+  .stories {
+    padding: var(--spacing-md);
+  }
+
+  .stories__intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stories__image-wrapper {
+    max-width: 100%;
+  }
+
+  .stories__text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .stories__description {
+    max-width: 100%;
+  }
+
+  .stories__logos {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .stories__logo-item img {
+    max-width: 180px;
+  }
+
+  /* Package Section */
+  .package {
+    background: url("./assets/package/Packagedisplay2.png") center center
+      no-repeat;
+    background-size: cover;
+    min-height: 400px;
+  }
+
+  .package__images {
+    gap: var(--spacing-sm);
+  }
+
+  .package__images img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Menu Section */
+  .menu {
+    min-height: 350px;
+  }
+
+  /* Gallery Section */
+  .gallery__item {
+    flex: 1 1 50%;
+    height: 40vh;
+    min-height: 200px;
+  }
+
+  /* Location Section */
+  .location {
+    min-height: 300px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE STYLES - MOBILE (max-width: 576px)
+============================================ */
+@media screen and (max-width: 576px) {
+  /* Chinese Section */
+  .chinese {
+    min-height: 220px;
+    padding: var(--spacing-sm);
+  }
+
+  .chinese__content {
+    gap: var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  /* Stories Section */
+  .stories {
+    padding: var(--spacing-sm);
+    min-height: auto;
+  }
+
+  .stories__text .btn {
+    width: 100%;
+  }
+
+  /* Package Section */
+  .package {
+    min-height: 350px;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .package__images {
+    flex-wrap: wrap;
+  }
+
+  .package__images img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Menu Section */
+  .menu {
+    min-height: 300px;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  /* Gallery Section */
+  .gallery__item {
+    flex: 1 1 100%;
+    height: 50vh;
+  }
+
+  /* Location Section */
+  .location {
+    min-height: 250px;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  /* Map Section */
+  .map__container {
+    padding-bottom: 75%; /* Taller aspect ratio for mobile */
+  }
+}
+
+/* ============================================
+   RESPONSIVE STYLES - SMALL MOBILE (max-width: 375px)
+============================================ */
+@media screen and (max-width: 375px) {
+  .chinese {
+    min-height: 200px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+
+  .package__images img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gallery__item {
+    height: 40vh;
+    min-height: 180px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+============================================ */
+@media print {
+  .chinese,
+  .package,
+  .menu,
+  .location {
+    background: none !important;
+    color: var(--color-black) !important;
+  }
+
+  .map {
+    display: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY & REDUCED MOTION
+============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #ff0000;
+    --shadow-text: 3px 3px 6px rgba(0, 0, 0, 1);
+  }
 }
