@@ -94,67 +94,7 @@ ul.nav-menu li a:hover {
   padding: 10px;
 }
 /* ===== Mobile Responsive ===== */
-@media (max-width: 768px) {
-  #header {
-    padding: 0 15px;
-  }
 
-  #header .logo img {
-    height: 50px;
-    width: 200px;
-    margin-left: 0;
-  }
-
-  .hamburger {
-    display: block;
-    z-index: 1001;
-    margin-left: auto;
-  }
-
-  .nav-links {
-    position: fixed;
-    right: -100%;
-    top: 110px;
-    width: 100%;
-    height: calc(100vh - 110px);
-    background-color: black;
-    flex-direction: column;
-    transition: right 0.3s ease-in-out;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    padding: 20px 0;
-    z-index: 1000;
-    margin-right: 0;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  ul.nav-menu {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-  }
-
-  ul.nav-menu li {
-    width: 100%;
-  }
-
-  ul.nav-menu li a {
-    display: block;
-    padding: 15px 20px;
-    text-align: center;
-    border-bottom: 1px solid #333;
-    font-size: 14px;
-  }
-
-  #header .btn {
-    width: 90%;
-    margin: 20px auto 0 auto;
-  }
-}
 /* ==========
 slider section 
 ==========*/
